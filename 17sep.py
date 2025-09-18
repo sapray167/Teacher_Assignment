@@ -16,7 +16,7 @@ print(min(myset))
 #problem 5
 roll_list=[2501,2502,2503,2504,2505,2506,2507,2508,2509,2510]
 present=[]
-with open('C:/Users/VikasTest/Desktop/test_py_repo/assignment/attendance.txt') as f:
+with open('C:/Users/VikasTest/Documents/Coding_Space/Teacher_Assignment/attendance.txt') as f:
     for line in f:
         present.append(int(line.strip()))
         if int(line.strip()) in roll_list:
@@ -25,7 +25,7 @@ with open('C:/Users/VikasTest/Desktop/test_py_repo/assignment/attendance.txt') a
     for x in roll_list:
         if x not in present:
             print("Absent",x)
-            with open('C:/Users/VikasTest/Desktop/test_py_repo/assignment/absent.txt','a') as ab:
+            with open('C:/Users/VikasTest/Documents/Coding_Space/Teacher_Assignment/absent.txt','a') as ab:
                 ab.write(str(x)+'\n')
 
 #problem 3
@@ -47,7 +47,7 @@ with open('library.txt','x') as l:
 
 #problem 2
 from collections import Counter
-with open('C:/Users/VikasTest/Desktop/test_py_repo/assignment/story.txt') as s:
+with open('C:/Users/VikasTest/Documents/Coding_Space/Teacher_Assignment/story.txt') as s:
     r=s.read()
     list=r.split()
 mylist=[]
