@@ -1,6 +1,2 @@
-# x='Python'
-def my():
-    x='C'
-    print("I like "+x)
-my()
-print('I like '+x)
+evens=[n for n in range(1,21) if n%2==0]
+print(evens)
