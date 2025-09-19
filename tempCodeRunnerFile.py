@@ -1,2 +1,5 @@
-evens=[n for n in range(1,21) if n%2==0]
-print(evens)
+with open('C:/Users/VikasTest/Documents/Coding_Space/Teacher_Assignment/script.txt') as s:
+    while True:
+        r=s.readline()
+        if 'error' in r:
+            print(r)
