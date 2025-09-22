@@ -89,9 +89,9 @@ for name,subject,mark in zip(names,subj,marks):
     if subject not in subject_groups:
         subject_groups[subject]=[]
     subject_groups[subject].append((name,mark))
-# print(subject_groups)
-# for k in subject_groups.keys():
-#     student_list = subject_groups[k]
-#     max_mark = max(student_list, key=lambda x: x[1])[1]
-#     top_scorers = [name for name, mark in student_list if mark == max_mark]
-#     print(f"Subject: {k} → {', '.join(top_scorers)} ({max_mark})")
+print(subject_groups)
+for k in subject_groups.keys():
+    student_list = subject_groups[k]
+    max_mark = max(student_list, key=lambda x: x[1])[1]
+    top_scorers = [name for name, mark in student_list if mark == max_mark]
+    print(k,top_scorers,max_mark)
