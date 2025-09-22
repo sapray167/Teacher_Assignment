@@ -22,6 +22,7 @@ for word in list:
     else:
         freq[word]=1
 print(freq)
+
 #3
 num=[12,45,67,89,45,37,-100]
 num.sort()
