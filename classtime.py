@@ -43,5 +43,6 @@ mylist=['any','am','ivy','airy','a']
 newlist=[x for x in mylist if x.startswith('a') and x.endswith('y')]
 print(newlist) 
 print(newlist)
+
 mylist=['a','b','c','d']
-print(mylist[-2:0:-1])
+print(mylist[-2:-2:-1])
