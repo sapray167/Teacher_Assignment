@@ -1,2 +1,2 @@
-nums=int(input("enter:")).split()
-print(nums)
+mylist=['a','b','c','d']
+print(mylist[-2:3:-1])

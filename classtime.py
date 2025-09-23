@@ -45,4 +45,5 @@ print(newlist)
 print(newlist)
 
 mylist=['a','b','c','d']
-print(mylist[-2:-2:-1])
+print(mylist[-2:3:-1])  
+
