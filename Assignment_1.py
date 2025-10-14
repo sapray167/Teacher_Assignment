@@ -23,16 +23,25 @@ for i in a:
 print("The Sum is",c)
 
 # leap year concept
+print("For Leap year True will be printed and if not then False")
+# yr=int(input("Enter the Year: "))
+# if yr%4==0 and yr%100==0 and yr%400!=0:
+#     print(yr,"is not a leap year")
+# elif yr%4==0 and yr%100!=0:
+#     print(yr,"is a leap year")
+# elif yr%100==0 and yr%400==0:
+#     print(yr,"is a leap year")
+# elif yr%4!=0:
+#     print(yr,"is not a leap year")
 
-yr=int(input("Enter the Year: "))
-if yr%4==0 and yr%100==0 and yr%400!=0:
-    print(yr,"is not a leap year")
-elif yr%4==0 and yr%100!=0:
-    print(yr,"is a leap year")
-elif yr%100==0 and yr%400==0:
-    print(yr,"is a leap year")
-elif yr%4!=0:
-    print(yr,"is not a leap year")
+yr=int(input('Enter year: '))
+if yr%4==0:
+    if yr%400==0:
+        print(True)
+    else:
+        print(False)
+else:
+    print(False)
 
 # Greetings
 

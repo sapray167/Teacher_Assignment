@@ -1,5 +1,4 @@
-my_subs=[['this is prayas','age is 19+'],['this is amit','age is 20+'],['this is abhishek','age is 22+']]
-for i in my_subs:
-    for j in i:
-        # print(len(j))
-        print(j)
+for n in range(0,10000000,137):
+    if len(str(n))==7:
+        print(n)
+        break

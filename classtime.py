@@ -57,3 +57,10 @@ for i in my_subs:
     for j in i:
         # print(len(j))
         print(j)
+
+# 7 digit number divisible by 137
+for n in range(0,10000000,137):
+    if len(str(n))==7:
+        print(n)
+        break
+ 
