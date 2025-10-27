@@ -47,7 +47,7 @@ print(newlist)
 mylist=['a','b','c','d']
 print(mylist[-2:3:-1])  
 
-with open('C:/Users/VikasTest/Documents/Coding_Space/Teacher_Assignment/script.txt') as s:
+with open('C:/Users/priya/Desktop/test_py_repo/Teacher_Assignment/script.txt') as s:
          for i in range(4):
             r=s.readline()
             print(r[::-1])
@@ -69,8 +69,9 @@ tup=('scala')
 tupule+=tup
 print(tupule)
 
-l=[1,2,3,4]
-l+="prayas"
+l=[1,2,3,4,5]
+print(l[3:0:-1])
+l+='prayas'
 print(l)
 
 myset={1,2,'u',3,4,65,5,'rp'}
@@ -129,3 +130,14 @@ for i in dict:
 def myf(ch1,ch2='Neil'):
     print('The eldest son is '+ch1)
 myf('Nitin')
+
+x='Global'
+def glo():
+    global x
+    x='awesome'
+    print(x)
+glo()
+print('Python is '+x)
+
+v=[1,2,3,4,5,6]
+print(v[1:5:2])
