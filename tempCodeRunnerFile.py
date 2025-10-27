@@ -1,4 +1,3 @@
-for n in range(0,10000000,137):
-    if len(str(n))==7:
-        print(n)
-        break
+def myf(ch1,ch2='Neil'):
+    print('The eldest son is '+ch1)
+myf()
