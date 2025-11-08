@@ -141,3 +141,63 @@ print('Python is '+x)
 
 v=[1,2,3,4,5,6]
 print(v[1:5:2])
+
+list=[1,2,3,4,5,6]
+for i in range(1,6):
+    list[i-1]=list[i]
+for i in range(6):
+    print(list[i],end='')
+
+
+def f(value,values):
+    values[value]=44 # list is muatable
+    value=0 # interger can't be modified
+t=3
+v=[1,2,3,4]
+f(t,v)
+print(t,v[t])
+
+def f(i,values=[]):
+    values.append(i)
+    print(values)
+    return values
+f(1)
+f(2)
+f(3)
+
+name='python'
+stars='*'.join(name)
+print(stars)
+
+c={'He','is','my','son.'}
+co=' '.join(c)
+print(co)
+
+def palin():
+    str=input('Enter string:').lower().split()
+    nstr=str.copy()
+    str=nstr.reverse()
+    if nstr==str:
+        return True
+    else:
+        return False
+print(palin())
+
+def pasw():
+    pas=input("enter your password: ")
+    specials='!@#$%^&*'
+    if len(pas)<8:
+        return False
+    hasdigit=hasspecial=hasupper=haslower=False
+    for i in pas:
+        if i.isdigit():
+            hasdigit=True
+        elif i.isupper():
+            hasupper=True
+        elif i.islower():
+            haslower=True
+        elif i in specials:
+            hasspecial=True
+    return hasdigit and hasupper and haslower and hasspecial
+print(pasw())
+            
