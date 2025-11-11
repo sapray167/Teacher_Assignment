@@ -200,4 +200,84 @@ def pasw():
             hasspecial=True
     return hasdigit and hasupper and haslower and hasspecial
 print(pasw())
-            
+''' Sorting of numbers and string'''
+n=[5,1,5,3,4]
+sn=sorted(n)
+print(n)
+print(sn) 
+
+f=['apple','banana','kiwi','aomegranate']
+sorted_by_len=sorted(f,key=len)
+print(sorted_by_len)
+
+f=['apple','banana','kiwi','aomegranate']
+sorted_by_len=sorted(f,reverse=True)
+print(sorted_by_len)
+
+''' formating string'''
+grade="A"
+score=90
+print(f"Above {score} is {grade} grade.")
+
+pi=3.14149
+print(f"pi is approximately {pi:.2f}") # .2f two decimal places
+
+''' zip '''
+scores=[90,80,70]
+grades=['A','B','C'] # if we give extra value then it will stop at the matching index
+zipped=zip(grades,scores) # work once 
+l=list(zipped)
+print(dict(zipped)) # gives a dictionary
+print(l)
+
+scores=[90,80,70]
+grades=['A','B','C']
+for g,s in zip(grades,scores):
+    print(f"Above {s} is Grade {g}.")
+
+''' unzip use * '''
+pairs=[('x',1),('y',2),('z',3)]
+l,n=zip(*pairs)
+print(l,n)
+
+''' map '''
+def double(n):
+    return n*2
+numbers=[2,3,4]
+result=map(double,numbers) # same as zip
+print(tuple(result))
+print(list(result))
+
+''' lambda '''
+add=lambda x,y:x+y # useful for short, one-line function for simple operations and you want to use it once and forget about it 
+print(add(1,2))
+
+n=[1,2,3,4,5,6]
+e=filter(lambda x: x%2==0,n) # filtering the numbers which follow the condition of lambda
+print(list(e))
+
+data=[(1,5),(3,1),(2,4)]
+sorted_data=sorted(data,key=lambda x: x[1])
+print(sorted_data)
+
+numbers=[1,2,3,4]
+result=map(lambda x: x*2,numbers)
+print(list(result))
+
+list1=['prayas','anurag']
+u_case=map(lambda x: x.upper(),list1)
+print(list(u_case))
+
+list1=['prayas','anurag']
+c_len=map(lambda x: len(x),list1)
+print(list(c_len))
+
+a=[1,2,3]
+b=[4,5,6]
+n_sum=map(lambda x,y : x+y,a,b)
+print(list(n_sum))
+
+n=[1,2,3,4,5,6,7]
+d_even=map(lambda x: x*2 if x%2==0 else x,n)
+print(list(d_even))
+

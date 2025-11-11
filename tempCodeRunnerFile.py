@@ -1,20 +1,3 @@
-def pasw():
-    pas=input("enter your password: ")
-    specials='!@#$%^&*'
-    if len(pas)<8:
-        return False
-    hasdigit=hasspecial=hasupper=haslower=False
-    for i in pas:
-        if i.isdigit():
-            hasdigit=True
-        elif i.isupper():
-            hasupper=True
-        elif i.islower():
-            haslower=True
-        elif i in specials:
-            hasspecial=True
-    if hasdigit and hasupper and haslower and hasspecial is True:
-        return True
-    else:
-        return False
-print(pasw())
+n=[1,2,3,4,5,6,7]
+d_even=map(lambda x: x*2 if x%2==0 else x,n)
+print(list(d_even))
