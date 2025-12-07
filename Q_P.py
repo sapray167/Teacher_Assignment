@@ -69,3 +69,10 @@ def reversing(string):
         return ''
     return reversing(string[1:])+string[0] # each time string reduces its first character and we also side by adds that character to a string
 print(reversing('prayas'))     
+
+
+def sumdigits(num):
+    if num==0:
+        return 0
+    return num%10+sumdigits(num//10)
+print(sumdigits(12345))

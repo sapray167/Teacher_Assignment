@@ -106,7 +106,7 @@ def fact(x):
         return 1
     else:
         return x*fact(x-1)
-print(fact(0))
+print(fact(4))
 
 def prime():
     n=int(input('Enter the number: '))
@@ -169,7 +169,7 @@ name='python'
 stars='*'.join(name)
 print(stars)
 
-c={'He','is','my','son.'}
+c=['He','is','my','son.']
 co=' '.join(c)
 print(co)
 
@@ -200,14 +200,15 @@ def pasw():
             hasspecial=True
     return hasdigit and hasupper and haslower and hasspecial
 print(pasw())
+
 ''' Sorting of numbers and string'''
 n=[5,1,5,3,4]
-sn=sorted(n)
+sn=set(sorted(n))
 print(n)
 print(sn) 
 
 f=['apple','banana','kiwi','aomegranate']
-sorted_by_len=sorted(f,key=len)
+sorted_by_len=sorted(f,key=len, reverse=True)
 print(sorted_by_len)
 
 f=['apple','banana','kiwi','aomegranate']
@@ -225,8 +226,8 @@ print(f"pi is approximately {pi:.2f}") # .2f two decimal places
 ''' zip '''
 scores=[90,80,70]
 grades=['A','B','C'] # if we give extra value then it will stop at the matching index
-zipped=zip(grades,scores) # work once 
-l=list(zipped)
+zipped=list(zip(grades,scores)) # work once 
+print(zipped)
 print(dict(zipped)) # gives a dictionary
 print(l)
 
@@ -244,9 +245,9 @@ print(l,n)
 def double(n):
     return n*2
 numbers=[2,3,4]
-result=map(double,numbers) # same as zip
+result=list(map(double,numbers)) # same as zip
+print(result)
 print(tuple(result))
-print(list(result))
 
 ''' lambda '''
 add=lambda x,y:x+y # useful for short, one-line function for simple operations and you want to use it once and forget about it 
@@ -274,6 +275,8 @@ print(list(c_len))
 
 a=[1,2,3]
 b=[4,5,6]
+ad=[x+y for x,y in zip(a,b)]
+print(ad)
 n_sum=map(lambda x,y : x+y,a,b)
 print(list(n_sum))
 
@@ -281,3 +284,149 @@ n=[1,2,3,4,5,6,7]
 d_even=map(lambda x: x*2 if x%2==0 else x,n)
 print(list(d_even))
 
+word=['prayas','anurag','amit','abhishek chintu']
+rev=map(lambda x: x[::-1].title(),word)
+print(list(rev))
+
+word=['prayas','anurag','amit','abhishek chintu']
+rev=map(lambda x: x[::-1].capitalize(),word)
+print(list(rev))
+
+''' map function returns iterator object '''
+
+l1=[1,2,3,4,5,6]
+l2=[3,4,5,6,7,8]
+result=[x+y for x ,y in zip(l1,l2) if x%2==0 and y%2==0]
+print(result)
+output=map(lambda x,y: x+y if x%2==0 and y%2==0 else None,l1,l2) # needs refinement
+print(list(output))
+
+def fibonacci_number(num):
+    if num==0:
+        return 0
+    elif num==1:
+        return 1
+    else:
+        return fibonacci_number(num-1) + fibonacci_number(num-2)
+print(fibonacci_number(7))
+
+l1=['prayas','anurag','sam','sap']
+l2=[90,40,80,50]
+result=filter(lambda x:x[1]>50,zip(l1,l2))
+print(dict(result))
+
+''' stroing the sum of the number'''
+def sum_digit(num):
+        if num==0:
+            return 0
+        remain=num%10
+        num=num//10
+        fi_num=remain+sum_digit(num)
+        if fi_num%10==fi_num:   # numbes do not have length as they are integers so already considered as 1
+            return fi_num
+        f_remain=fi_num%10
+        fi_num=fi_num//10
+        return f_remain+sum_digit(fi_num)
+print(sum_digit(124))
+
+# or 
+
+def sum_digit(num):
+        if num<10:
+            return num
+        fi_num=num%10+sum_digit(num//10)
+        return sum_digit(fi_num)
+print(sum_digit(124))
+
+''' character sum '''  #needs refinment
+def char_sum(string,new_str='',pow=1):
+    if not string:
+        return ''
+    if string[0] in string[1:]:
+        pow+=1
+        new_str=string[0]+str(pow)+char_sum(string[1:],new_str,pow=1)
+    # else:
+    #     new_str=string[0]+str(pow)+char_sum(string[1:],new_str,pow=1)
+    return new_str+char_sum(string[1:],new_str,pow=1)
+print(char_sum('aabbbcdd'))
+
+
+''' Exception '''
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print('Zero Division Error')
+print("hello")
+    
+try:
+    n=int('abc')
+    print(10/0)
+except ValueError:
+    print('Invalid integer input!')
+except ZeroDivisionError:
+    print('Can not divide by zero')
+print("Hello World!")
+
+'''
+else: runs only if no exception occurs
+finally: runs always whether there is exception or not(used for cleanup: closing files, releasing resources)
+'''
+try:
+    num=int('20')
+except ValueError:
+    print("Invalid number")
+else:
+    print("conversion succeeded",num)
+print('done')
+
+try:
+    num=int('2e0')
+except ValueError:
+    print("Invalid number")
+else:
+    print("conversion succeeded",num)
+print('done')
+
+try:
+    f=open('story.txt')
+    r=f.read()
+    print(r)
+except FileNotFoundError:
+    print("file not found")
+finally:
+    print("This will always run")
+
+'''
+we can create custom exceptions to handlespecific error conditions within our applications.
+'''
+class MyNegError(Exception):
+    pass
+def set_age(age):
+    if age<0:
+        raise MyNegError("Age cannot be negative")
+    print("Age set to", age)
+try:
+    set_age(-5)
+except MyNegError as e:
+    print("Custom Error:", e)
+
+
+''' About Garbage Collection '''
+import gc 
+c=gc.collect()
+print(c)
+def fun(i):
+    x = {}
+    x[i + 1] = x
+    return x
+for i in range(5):
+    fun(i)
+c=gc.collect()
+print(c)
+
+import gc
+a = [1, 2, 3]
+b = {"a": 1, "b": 2}
+c = "Hello, world!"
+del a,b,c
+print(gc.collect())
