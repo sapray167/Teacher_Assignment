@@ -1,0 +1,14 @@
+[
+    {
+        "name":"Sap chin",
+        "age":25,
+        "email":"sap_chin@outlook.com",
+        "isStudent":true
+    },
+    {
+        "name":"Turki",
+        "age":35,
+        "email":"truki12@gmail.com",
+        "isStudent":false
+    }
+]

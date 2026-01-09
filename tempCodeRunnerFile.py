@@ -1,11 +1,9 @@
-import gc 
-c=gc.collect()
-print(c)
-def fun(i):
-    x = {}
-    x[i + 1] = x
-    return x
-for i in range(5):
-    fun(i)
-
-print(gc.collect())
+import json
+with open('S:/Repositories/Teacher_Assignment/data.json','r') as jfile:
+    data=json.load(jfile)
+    print(data)
+for person in data:
+    if person.get('isStudent'):
+        print(f'{person['name']} is a student.')
+    else:
+        print(f'{person['name']} is not a student.')
